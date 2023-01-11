@@ -75,7 +75,9 @@ defmodule Phosphoricons.IconGenerator do
             file: __ENV__.file,
             line: __ENV__.line + 1,
             module: __ENV__.module,
-            indentation: 0
+            indentation: 0,
+            caller: __ENV__,
+            source: head <> "{@attrs}" <> body
           )
         )
       end
