@@ -31,18 +31,18 @@ After that, run `mix deps.get`.
 The components are in `Phosphoricons.LiveView.Icon`, and `Phosphoricons.Surface.Icon` (check the Phosphoricons to know which weights exist). Each icon is a Phoenix/Surface Component you can use in your HEEx templates.
 
 ```eex
-<Phosphoricons.LiveView.icon type="fill' name="alarm" />
+<Phosphoricons.LiveView.icon type="fill" name="alarm" />
 ```
 
 and style it with some classes
 
 ```eex
-<Phosphoricons.LiveView.icon type="fill' name="alarm" class="h-6 w-6 text-gray-500" />
+<Phosphoricons.LiveView.icon type="fill" name="alarm" class="h-6 w-6 text-gray-500" />
 ```
 
 Surface is also supported
 ```eex
-<Phosphoricons.Surface.icon type="fill' name="alarm" class="h-6 w-6 text-gray-500" />
+<Phosphoricons.Surface.icon type="fill" name="alarm" class="h-6 w-6 text-gray-500" />
 ```
 
 There are also function versions of each component:
