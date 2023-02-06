@@ -35,6 +35,6 @@ defmodule Phosphoricons.Helpers do
     Phoenix.HTML.raw([head, attrs, rest])
   end
 
-  def filter_class(value) when is_list(value), do: Enum.filter(value, & &1)
+  def filter_class(value) when is_list(value), do: Enum.filter(value, & &1) |> Enum.join(" ")
   def filter_class(value), do: value
 end

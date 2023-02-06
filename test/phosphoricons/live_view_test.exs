@@ -12,9 +12,12 @@ defmodule Phosphoricons.LiveViewTest do
 
     assert render_component(
              &Phosphoricons.LiveView.icon/1,
-             assigns(name: "alarm", class: [true && "h-6", false && "w-6"])
+             assigns(
+               name: "alarm",
+               class: [true && "h-6 w-6", false && "h-8 w-8", "text-gray-500"]
+             )
            ) =~
-             ~s(class="h-6")
+             ~s(class="h-6 w-6 text-gray-500")
   end
 
   defp assigns(assgns) do
