@@ -26,8 +26,8 @@ defmodule PhosphoriconsElixir.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:phoenix_html, "~> 3.2.0"},
-      {:phoenix_live_view, ">= 0.18.9", optional: true},
+      {:phoenix_html, "~> 3.3.1"},
+      {:phoenix_live_view, ">= 0.18.16", optional: true},
       {:ex_doc, "~> 0.29.1", only: :dev, runtime: false},
       # Testing
       {:mix_test_watch, "~> 1.1.0", only: [:dev, :test], runtime: false},
