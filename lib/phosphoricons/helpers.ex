@@ -19,7 +19,7 @@ defmodule Phosphoricons.Helpers do
       key =
         key
         |> Atom.to_string()
-        |> String.replace("_", "-")
+        |> convert_attr_key()
         |> Phoenix.HTML.Safe.to_iodata()
 
       value =
@@ -31,6 +31,17 @@ defmodule Phosphoricons.Helpers do
         |> Phoenix.HTML.Safe.to_iodata()
 
       [?\s, key, ?=, ?", value, ?"]
+    end
+  end
+
+  defp convert_attr_key(key) do
+    case key do
+      # Exception for phx-value to keep variable names correct (i.e. opts={phx_value_element_id: ...})
+      "phx_value_" <> event_key ->
+        "phx-value-" <> event_key
+
+      string_key ->
+        String.replace(string_key, "_", "-")
     end
   end
 

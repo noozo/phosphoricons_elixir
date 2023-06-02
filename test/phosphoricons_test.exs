@@ -36,6 +36,16 @@ defmodule PhosphoriconsTest do
     assert Phosphoricons.icon("alarm", type: "fill", viewBox: "0 0 12 12")
            |> Phoenix.HTML.safe_to_string() =~
              ~s(viewBox="0 0 12 12")
+
+    assert Phosphoricons.icon("alarm",
+             type: "fill",
+             class: "h-6 w-6 text-gray-500",
+             phx_click: "update",
+             phx_value_id: 5,
+             alert: true
+           )
+           |> Phoenix.HTML.safe_to_string() =~
+             ~s(phx-click="update" phx-value-id="5" alert="true")
   end
 
   test "generated components" do
@@ -47,6 +57,24 @@ defmodule PhosphoriconsTest do
              assigns(name: "alarm", class: "h-6 w-6 text-gray-500")
            ) =~
              ~s(class="h-6 w-6 text-gray-500")
+
+    assert render_component(
+             &Phosphoricons.LiveView.icon/1,
+             assigns(
+               name: "alarm",
+               opts: [phx_click: "update", phx_value_id: 5, alert: true]
+             )
+           ) =~
+             ~s(phx-click="update" phx-value-id="5" alert="true")
+
+    assert render_component(
+             &Phosphoricons.LiveView.icon/1,
+             assigns(
+               name: "alarm",
+               opts: [phx_click: "update", phx_value_element_id: 5, alert: true]
+             )
+           ) =~
+             ~s(phx-click="update" phx-value-element_id="5" alert="true")
   end
 
   test "generated docs" do
