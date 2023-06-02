@@ -17,6 +17,10 @@ defmodule PhosphoriconsTest do
            |> Phoenix.HTML.safe_to_string() =~
              ~s(class="h-6 w-6 text-gray-500")
 
+    assert Phosphoricons.icon("alarm", type: "fill", class: ["h-6 w-6", "text-gray-500"])
+           |> Phoenix.HTML.safe_to_string() =~
+             ~s(class="h-6 w-6 text-gray-500")
+
     assert Phosphoricons.icon("alarm", type: "fill", class: "<> \" ")
            |> Phoenix.HTML.safe_to_string() =~
              ~s(class="&lt;&gt; &quot; ")
