@@ -22,7 +22,13 @@ defmodule Phosphoricons.Helpers do
         |> String.replace("_", "-")
         |> Phoenix.HTML.Safe.to_iodata()
 
-      value = Phoenix.HTML.Safe.to_iodata(value)
+      value =
+        if key == "class" do
+          filter_class(value)
+        else
+          value
+        end
+        |> Phoenix.HTML.Safe.to_iodata()
 
       [?\s, key, ?=, ?", value, ?"]
     end
@@ -32,4 +38,7 @@ defmodule Phosphoricons.Helpers do
   def insert_attrs(head, attrs, rest) do
     Phoenix.HTML.raw([head, attrs, rest])
   end
+
+  def filter_class(value) when is_list(value), do: Enum.filter(value, & &1) |> Enum.join(" ")
+  def filter_class(value), do: value
 end
