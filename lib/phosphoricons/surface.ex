@@ -52,7 +52,7 @@ if Code.ensure_loaded?(Surface) do
 
     defp class_to_opts(assigns) do
       if assigns[:class] do
-        [class: Surface.css_class(assigns.class)]
+        [class: Surface.css_class([assigns.class])]
       else
         []
       end
