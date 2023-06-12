@@ -6,7 +6,7 @@ defmodule PhosphoriconsTest do
   test "generated function" do
     alarm =
       :code.priv_dir(:phosphoricons)
-      |> Path.join("fill/alarm-fill.svg")
+      |> Path.join("Fill/alarm-fill.svg")
       |> File.read!()
 
     assert Phosphoricons.icon("alarm", type: "fill")
