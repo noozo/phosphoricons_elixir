@@ -4,7 +4,7 @@ defmodule PhosphoriconsElixir.MixProject do
   def project do
     [
       app: :phosphoricons,
-      version: "0.2.3",
+      version: "0.2.4",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -12,7 +12,16 @@ defmodule PhosphoriconsElixir.MixProject do
       source_url: "https://github.com/noozo/phosphoricons_elixir",
       description: "Phoenix components for Phosphoricons!",
       docs: docs(),
-      package: package()
+      package: package(),
+      xref: [
+        exclude: [
+          Surface.Renderer,
+          Surface.Component,
+          Surface.BaseComponent,
+          Surface.API,
+          Surface
+        ]
+      ]
     ]
   end
 
