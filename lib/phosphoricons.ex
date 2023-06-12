@@ -26,7 +26,7 @@ defmodule Phosphoricons do
   icons =
     for weight <- ["thin", "light", "regular", "bold", "fill", "duotone"] do
       icon_paths =
-        Path.absname("#{weight}/", :code.priv_dir(:phosphoricons))
+        Path.absname("#{String.capitalize(weight)}/", :code.priv_dir(:phosphoricons))
         |> Path.join("*.svg")
         |> Path.wildcard()
 
