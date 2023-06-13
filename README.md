@@ -8,7 +8,7 @@ Designed at 16 x 16px to read well small and scale up big
 Raw stroke information retained to fine-tune the style
 More ways to use at [phosphoricons.com].
 
-Current Phosphoricons Version: **1.4.0**
+Current Phosphoricons Version: **2.0.0**
 
 This library was a modification of the excellent work by [Max Veytsman](https://github.com/mveytsman) for the Heroicons library at [https://github.com/mveytsman/heroicons_elixir]
 
@@ -19,7 +19,7 @@ Add Phosphoricons to your `mix.exs`:
 ```elixir
 defp deps do
   [
-    {:phosphoricons, "~> 0.1.0"}
+    {:phosphoricons, "~> 0.2.4"}
   ]
 end
 ```
