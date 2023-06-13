@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.2.4 (2022-06-12)
+
+Bugfixes
+
+## 0.2.3 (2022-06-12)
+
+Bugfixes
+
+## 0.2.2 (2022-06-02)
+
+Bugfixes
+
+## 0.2.1 (2022-06-02)
+
+Bugfixes
+
+## 0.2.0 (2022-06-02)
+
+Update to phophoricons 2.0.0
+
 ## 0.1.0 (2022-01-18)
 
 WARNING: Breaking changes. The way to use the icons changes completely. View docs for more information.
