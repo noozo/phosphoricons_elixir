@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.4 (2024-02-21)
+
+Updating libraries
+
 ## 0.1.0 (2022-01-18)
 
 WARNING: Breaking changes. The way to use the icons changes completely. View docs for more information.
