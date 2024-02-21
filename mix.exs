@@ -5,7 +5,7 @@ defmodule PhosphoriconsElixir.MixProject do
     [
       app: :phosphoricons,
       version: "0.2.5",
-      elixir: "~> 1.14",
+      elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Phosphoricons",
