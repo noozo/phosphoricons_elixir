@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.6 (2024-04-23)
+
+Updating libraries
+
 ## 0.2.5 (2024-02-21)
 
 Updating libraries
