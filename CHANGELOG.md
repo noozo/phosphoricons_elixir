@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.2.6 (2024-04-23)
+## 0.3.0 (2024-08-08)
 
-Updating libraries
+WARNING: Breaking changes. This version removes Surface support due to surface_form not existing in hex.pm at this moment.
 
 ## 0.2.5 (2024-02-21)
 

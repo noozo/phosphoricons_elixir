@@ -4,24 +4,15 @@ defmodule PhosphoriconsElixir.MixProject do
   def project do
     [
       app: :phosphoricons,
-      version: "0.2.6",
-      elixir: "~> 1.16",
+      version: "0.3.0",
+      elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Phosphoricons",
       source_url: "https://github.com/noozo/phosphoricons_elixir",
       description: "Phoenix components for Phosphoricons!",
       docs: docs(),
-      package: package(),
-      xref: [
-        exclude: [
-          Surface.Renderer,
-          Surface.Component,
-          Surface.BaseComponent,
-          Surface.API,
-          Surface
-        ]
-      ]
+      package: package()
     ]
   end
 
@@ -35,9 +26,8 @@ defmodule PhosphoriconsElixir.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:phoenix_html, "~> 4.1", override: true},
+      {:phoenix_html, "~> 4.1"},
       {:phoenix_live_view, "~> 0.20", optional: true},
-      {:surface, "~> 0.11", optional: true},
       {:ex_doc, "~> 0.29.4", only: :dev, runtime: false},
       # Testing
       {:mix_test_watch, "~> 1.1.0", only: [:dev, :test], runtime: false},
