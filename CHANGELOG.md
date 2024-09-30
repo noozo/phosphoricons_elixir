@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 (2024-09-30)
+
+Update to phophoricons 2.1.0
+
 ## 0.3.0 (2024-08-08)
 
 WARNING: Breaking changes. This version removes Surface support due to surface_form not existing in hex.pm at this moment.
