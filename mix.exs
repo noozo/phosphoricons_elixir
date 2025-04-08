@@ -4,8 +4,8 @@ defmodule PhosphoriconsElixir.MixProject do
   def project do
     [
       app: :phosphoricons,
-      version: "0.3.1",
-      elixir: "~> 1.17",
+      version: "0.3.2",
+      elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Phosphoricons",
@@ -27,7 +27,7 @@ defmodule PhosphoriconsElixir.MixProject do
   defp deps do
     [
       {:phoenix_html, "~> 4.1"},
-      {:phoenix_live_view, "~> 0.20", optional: true},
+      {:phoenix_live_view, "~> 1.0", optional: true},
       {:ex_doc, "~> 0.29.4", only: :dev, runtime: false},
       # Testing
       {:mix_test_watch, "~> 1.1.0", only: [:dev, :test], runtime: false},
