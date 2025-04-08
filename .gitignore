@@ -26,3 +26,5 @@ phosphoricons-*.tar
 /tmp
 
 *.code-workspace
+
+.DS_Store
