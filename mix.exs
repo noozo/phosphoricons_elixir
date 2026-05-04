@@ -40,6 +40,7 @@ defmodule PhosphoriconsElixir.MixProject do
   defp package do
     [
       licenses: ["MIT"],
+      # Links to show on hex.pm
       links: %{"GitHub" => "https://github.com/noozo/phosphoricons_elixir"}
     ]
   end
