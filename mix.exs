@@ -4,7 +4,7 @@ defmodule PhosphoriconsElixir.MixProject do
   def project do
     [
       app: :phosphoricons,
-      version: "0.3.3",
+      version: "0.3.2",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -40,8 +40,7 @@ defmodule PhosphoriconsElixir.MixProject do
   defp package do
     [
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/noozo/phosphoricons_elixir"},
-      files: ~w(lib .formatter.exs mix.exs README* CHANGELOG* LICENSE*)
+      links: %{"GitHub" => "https://github.com/noozo/phosphoricons_elixir"}
     ]
   end
 
