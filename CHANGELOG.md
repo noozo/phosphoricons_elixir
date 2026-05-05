@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 (2026-05-05)
+
+Icons are now bundled as a single `priv/icons.zip` archive (~3.8MB) instead of ~36MB of individual SVG files. The zip is read into memory at compile time, so runtime behavior is unchanged.
+
 ## 0.3.1 (2024-09-30)
 
 Update to phophoricons 2.1.0

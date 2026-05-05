@@ -28,3 +28,6 @@ phosphoricons-*.tar
 *.code-workspace
 
 .DS_Store
+
+.claude
+CLAUDE.md

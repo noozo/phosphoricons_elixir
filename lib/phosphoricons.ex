@@ -23,35 +23,31 @@ defmodule Phosphoricons do
   """
   alias Phosphoricons.Helpers
 
+  @icons_zip Path.join(:code.priv_dir(:phosphoricons), "icons.zip")
+  @external_resource @icons_zip
+
+  {:ok, zip_entries} = :zip.unzip(String.to_charlist(@icons_zip), [:memory])
+
   icons =
-    for weight <- ["thin", "light", "regular", "bold", "fill", "duotone"] do
-      icon_paths =
-        Path.absname("#{weight}/", :code.priv_dir(:phosphoricons))
-        |> Path.join("*.svg")
-        |> Path.wildcard()
+    zip_entries
+    |> Enum.group_by(
+      fn {path, _} -> path |> List.to_string() |> Path.split() |> hd() end,
+      fn {path, contents} ->
+        name =
+          path
+          |> List.to_string()
+          |> Path.basename(".svg")
+          |> String.replace("-", "_")
+          |> Helpers.remove_appendix()
 
-      weight_icons =
-        for path <- icon_paths do
-          name =
-            Path.basename(path, ".svg")
-            |> String.replace("-", "_")
-            |> Helpers.remove_appendix()
+        icon = String.replace(contents, "stroke=\"#000\"", "stroke=\"currentColor\"")
+        {i, _} = :binary.match(icon, ">")
+        {name, String.split_at(icon, i)}
+      end
+    )
+    |> Map.new(fn {weight, entries} -> {weight, Map.new(entries)} end)
 
-          # Read file and replace all strokes with currentColor
-          icon =
-            path
-            |> File.read!()
-            |> String.replace("stroke=\"#000\"", "stroke=\"currentColor\"")
-
-          {i, _} = :binary.match(icon, ">")
-          {name, String.split_at(icon, i)}
-        end
-        |> Map.new()
-
-      {weight, weight_icons}
-    end
-
-  @icons Map.new(icons)
+  @icons icons
 
   @doc """
   ![](assets/Fill/alarm-fill.svg) {: width=24px}
